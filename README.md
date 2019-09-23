@@ -3,6 +3,8 @@ rayriffy-h-poster
 
 Sharing code to socials securely with styled encoded poster
 
+![preview](img/preview.png)
+
 Usage
 -----
 
