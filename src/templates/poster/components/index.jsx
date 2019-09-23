@@ -1,11 +1,13 @@
 import React from 'react'
 
-const Poster = props => {
-  const {id} = props
+import {withRouter} from 'react-router'
 
-  return (
-    <></>
-  )
+import PosterComponent from './poster'
+
+const Poster = props => {
+  const {id} = props.match.params
+
+  return <PosterComponent id={id} />
 }
 
-export default Poster
+export default withRouter(Poster)
