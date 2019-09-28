@@ -1,11 +1,11 @@
 import React from 'react'
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Loadable from 'react-loadable'
 
 import {createGlobalStyle} from 'styled-components'
 
-import NotFoundComponent from '../../templates/404/components/index'
-import PosterTemplate from '../../templates/poster/components'
+import LoadingComponent from '../../templates/loading/components'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -27,6 +27,16 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const PosterPage = Loadable({
+  loader: import('../../templates/poster/components'),
+  loading: LoadingComponent,
+})
+
+const NotFoundPage = Loadable({
+  loader: import('../../templates/404/components'),
+  loading: LoadingComponent,
+})
+
 const AppComponent = props => {
 
   return (
@@ -35,10 +45,10 @@ const AppComponent = props => {
       <Switch>
         <Route
           path={`/encode/:id`}
-          component={PosterTemplate}
+          component={PosterPage}
         />
         <Route
-          component={NotFoundComponent}
+          component={NotFoundPage}
         />
       </Switch>
     </Router>
