@@ -28,12 +28,12 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const PosterPage = Loadable({
-  loader: import('../../templates/poster/components'),
+  loader: () => import('../../templates/poster/components'),
   loading: LoadingComponent,
 })
 
 const NotFoundPage = Loadable({
-  loader: import('../../templates/404/components'),
+  loader: () => import('../../templates/404/components'),
   loading: LoadingComponent,
 })
 
