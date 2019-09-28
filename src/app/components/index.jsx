@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import {createGlobalStyle} from 'styled-components'
 
+import NotFoundComponent from '../../templates/404/components/index'
 import PosterTemplate from '../../templates/poster/components'
 
 const GlobalStyle = createGlobalStyle`
@@ -35,6 +36,9 @@ const AppComponent = props => {
         <Route
           path={`/encode/:id`}
           component={PosterTemplate}
+        />
+        <Route
+          component={NotFoundComponent}
         />
       </Switch>
     </Router>
