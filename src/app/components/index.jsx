@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Helmet } from 'react-helmet'
+
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Loadable from 'react-loadable'
 
@@ -41,6 +43,16 @@ const AppComponent = props => {
 
   return (
     <Router>
+      <Helmet
+        defaultTitle={`Poster API`}
+        htmlAttributes={{lang: 'en'}}
+        meta={[
+          {
+            name: 'referrer',
+            content: 'same-origin',
+          }
+        ]}
+      />
       <GlobalStyle />
       <Switch>
         <Route
