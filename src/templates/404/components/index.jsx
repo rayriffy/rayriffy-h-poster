@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Box, Card, Flex, Image, Text } from 'rebass'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const BorderedCard = styled(Card)`
   border-radius: 8px;
