@@ -2,7 +2,7 @@ import React from 'react'
 
 import NotFoundComponent from '../templates/404/components'
 
-const IndexPage = props => {
+const IndexPage: React.FC = props => {
   return (
     <NotFoundComponent />
   )

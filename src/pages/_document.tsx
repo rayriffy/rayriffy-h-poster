@@ -1,16 +1,18 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import React from 'react'
+
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 class NextDocument extends Document {
-  static async getInitialProps(ctx) {
+  public static async getInitialProps(ctx: any) {
     const initialProps = await Document.getInitialProps(ctx)
+
     return { ...initialProps }
   }
 
-  render() {
+  public render() {
     return (
       <Html lang='en'>
         <Head>
-          <title>Poster API</title>
           <meta name='referrer' content='same-origin' />
         </Head>
         <body>

@@ -1,9 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 
-import {Box, Text} from 'rebass'
 import styled from '@emotion/styled'
+import { Box, Text } from 'rebass'
 
-import {getCover} from '../services/getCover'
+import { getCover } from '../services/getCover'
+
+interface IProps {
+  id: string
+}
 
 const CoverBox = styled(Box)`
   overflow: hidden;
@@ -14,12 +18,12 @@ const BlurBox = styled(Box)`
   filter: blur(50px);
 `
 
-const PosterComponent = props => {
-  const {id} = props
+const PosterComponent: React.FC<IProps> = props => {
+  const { id } = props
 
-  const [raw, setRaw] = useState(null)
+  const [raw, setRaw] = useState<string | null>(null)
 
-  const fetchCover = async id => {
+  const fetchCover = async (id: string) => {
     const cover = await getCover(id)
     setRaw(cover)
   }
@@ -32,7 +36,7 @@ const PosterComponent = props => {
     <Box>
       {raw !== null ? (
         <CoverBox>
-          <BlurBox 
+          <BlurBox
             sx={{
               backgroundImage: `url(${raw})`,
               backgroundSize: 'cover',
@@ -46,7 +50,14 @@ const PosterComponent = props => {
       )}
       <Box backgroundColor={`#${String(id).padStart(6, '0')}`} p={4}>
         <Box py={2}>
-        <Text fontFamily={`RM4SCC`} fontSize={76} color={`white`} textAlign={`center`} py={4}>{String(id).padStart(6, '0')}</Text>
+          <Text
+            fontFamily={`RM4SCC`}
+            fontSize={76}
+            color={`white`}
+            textAlign={`center`}
+            py={4}>
+            {String(id).padStart(6, '0')}
+          </Text>
         </Box>
       </Box>
     </Box>

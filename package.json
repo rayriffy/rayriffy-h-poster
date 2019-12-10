@@ -1,6 +1,8 @@
 {
   "name": "rayriffy-h-poster",
   "version": "0.1.0",
+  "author": "Phumrapee Limpianchop <contact@rayriffy.com>",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.22",
@@ -18,7 +20,19 @@
     "dev": "next",
     "build": "next build",
     "export": "next export",
-    "start": "next start"
+    "start": "next start",
+    "format": "yarn test:lint --fix",
+    "test:types": "tsc",
+    "test:lint": "tslint 'src/**/*.{ts,tsx}'"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/rebass": "^4.0.3",
+    "prettier": "^1.19.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.1.0",
+    "typescript": "^3.7.2"
+  }
 }
