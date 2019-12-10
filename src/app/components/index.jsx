@@ -12,12 +12,6 @@ const AppComponent = props => {
       <Helmet
         defaultTitle={`Poster API`}
         htmlAttributes={{lang: 'en'}}
-        meta={[
-          {
-            name: 'referrer',
-            content: 'same-origin',
-          }
-        ]}
       />
       <Global
         styles={css`
