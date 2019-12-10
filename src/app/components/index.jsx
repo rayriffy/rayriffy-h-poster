@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { Helmet } from 'react-helmet'
-
 import { Global, css } from '@emotion/core'
 
 const AppComponent = props => {
@@ -9,10 +7,6 @@ const AppComponent = props => {
 
   return (
     <React.Fragment>
-      <Helmet
-        defaultTitle={`Poster API`}
-        htmlAttributes={{lang: 'en'}}
-      />
       <Global
         styles={css`
           html {

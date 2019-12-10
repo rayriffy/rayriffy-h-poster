@@ -8,8 +8,9 @@ class NextDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <Head>
+          <title>Poster API</title>
           <meta name='referrer' content='same-origin' />
         </Head>
         <body>
