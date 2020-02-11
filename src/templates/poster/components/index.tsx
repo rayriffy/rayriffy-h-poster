@@ -33,7 +33,7 @@ const PosterComponent: React.FC<IProps> = props => {
   }, [])
 
   return (
-    <Box>
+    <React.Fragment>
       {raw !== null ? (
         <CoverBox>
           <BlurBox
@@ -60,7 +60,7 @@ const PosterComponent: React.FC<IProps> = props => {
           </Text>
         </Box>
       </Box>
-    </Box>
+    </React.Fragment>
   )
 }
 
