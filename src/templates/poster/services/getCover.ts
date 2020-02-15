@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-unfetch'
-
 export const getCover = async (id: string) => {
   const res = await fetch(`https://opener.now.sh/api/data/${id}`).then(o =>
     o.json()
